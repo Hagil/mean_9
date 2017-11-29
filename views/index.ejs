@@ -6,12 +6,15 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="http://www.stream2watch.cc/images/categories/4/64x64/14616606297074.png">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
     <script src="js/frontend_app.js"></script>
 
 </head>
 <body ng-app="patients">
     <h1>MEAN 9 demo</h1>
-<div ng-controller="data_patients">
+    <div ng-view></div>
+
+<!-- <div ng-controller="data_patients">
     <table class="table">
 <thead>
     <tr>
@@ -26,6 +29,6 @@
     </tr>
 </tbody>
 </table>
-</div>
+</div> -->
 </body>
 </html>
