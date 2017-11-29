@@ -1,0 +1,28 @@
+var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27500/medical', {useMongoClient: true});
+
+
+var contact_structure = {
+    email: String,
+    cell: String
+}
+var contact_schema = new mongoose.Schema(contact_structure);
+
+var drug_structure = {
+    drug: String,
+    usage : Number
+}
+var drug_schema = new mongoose.Schema(drug_structure);
+
+var patient_structure = {
+    name: String,
+    gender: String,
+    contact: contact_schema,
+    medical: drug_schema
+}
+var patient_schema = new mongoose.Schema(patient_structure);
+
+var PATIENTCLASS = mongoose.model('patients', patient_structure);
+
+module.exports = PATIENTCLASS;
