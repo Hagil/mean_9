@@ -43,9 +43,9 @@ function do_create(req, res) {
     console.log('creating patient');
     console.log(req.body);
 
-    if(req.body.name == '' || req.body.name == null){
-        res.json({error: ' no name of patient!'});
-    }
+    // if(req.body.name == '' || req.body.name == null){
+    //     res.json({error: ' no name of patient!'});
+    // }
 
     var data = {
         name: req.body.name,
@@ -70,7 +70,7 @@ function do_update(req, res) {
     console.log('updating record');
     console.log(req.body);
     var update = {
-        $set: req.body.patient
+        $set: req.body
         
         //{
         //     name: req.body.name,

@@ -23,6 +23,6 @@ var patient_structure = {
 }
 var patient_schema = new mongoose.Schema(patient_structure);
 
-var PATIENTCLASS = mongoose.model('patients', patient_structure);
+var PATIENTCLASS = mongoose.model('patient', patient_structure);
 
 module.exports = PATIENTCLASS;
