@@ -14,7 +14,7 @@ router.get('/api/v9/read', do_read);
 router.get('/api/v9/read/:_id', do_single_read);
 router.post('/api/v9/create', do_create);
 router.put('/api/v9/update', do_update);
-router.delete('/api/v9/delete', do_delete);
+router.delete('/api/v9/delete/:_id', do_delete);
 
 function do_read(req, res) {
     console.log('getting all patients');
@@ -86,7 +86,7 @@ function do_update(req, res) {
         // }
     }
     PATIENTCLASS
-        .findByIdAndUpdate(req.body.patient._id, update)
+        .findByIdAndUpdate(req.body._id, update)
         .then(function (result){
             console.log(result);
             res.json({message: 'backend updated!'});
