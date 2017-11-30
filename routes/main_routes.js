@@ -71,19 +71,6 @@ function do_update(req, res) {
     console.log(req.body);
     var update = {
         $set: req.body
-        
-        //{
-        //     name: req.body.name,
-        //     gender: req.body.gender,
-        //     contact: {
-        //         email: req.body.email,
-        //         cell: req.body.cell,
-        //     },
-        //     medical: {
-        //         drug: req.body.drug,
-        //         usage: req.body.usage
-        //     }
-        // }
     }
     PATIENTCLASS
         .findByIdAndUpdate(req.body._id, update)
